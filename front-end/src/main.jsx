@@ -1,20 +1,19 @@
-import "./styles/theme.css"
-import "./styles/globals.css"
+import "./styles/theme.css";
+import "./styles/globals.css";
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { MainPage } from "./views/MainPage/MainPage.jsx"
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<App/>
+    element:<MainPage/>
   }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      </RouterProvider>
-  </React.StrictMode>,
+    <RouterProvider router={router}></RouterProvider>
+  </React.StrictMode>
 )
