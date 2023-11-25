@@ -9,3 +9,7 @@
  border: none;
  
 }
+
+.black{
+ background-color: var(--color-text-default);
+}
