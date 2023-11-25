@@ -6,12 +6,13 @@ import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 //import { MainPage } from "./views/MainPage/MainPage.jsx"
 //import { Favourites } from "./views/Favourites/Favourites.jsx";
-import { Cart } from "./views/Cart/Cart.jsx";
+//import { Cart } from "./views/Cart/Cart.jsx";
+import { ProductsList } from "./views/ProductsList/ProductsList.jsx";
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<Cart/>
+    element:<ProductsList/>
   }
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
