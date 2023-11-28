@@ -5,16 +5,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 //import { MainPage } from "./views/MainPage/MainPage.jsx"
-//import { Favourites } from "./views/Favourites/Favourites.jsx";
-//import { Cart } from "./views/Cart/Cart.jsx";
+import { Favourites } from "./views/Favourites/Favourites.jsx";
+import { Cart } from "./views/Cart/Cart.jsx";
+import { Layout } from "./components/Layout/Layout.jsx";
 //import { ProductsList } from "./views/ProductsList/ProductsList.jsx";
-import { ProductDetails } from "./views/ProductDetails/ProductDetails.jsx";
+//import { ProductDetails } from "./views/ProductDetails/ProductDetails.jsx";
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<ProductDetails/>
-  }
+    path:'',
+    element:<Layout/>,
+    children:[
+      { path: '/koszyk',
+      element: <Cart/>
+      },
+      { path: '/ulubione',
+        element: <Favourites/>
+      }
+    ]
+  },
+  
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
