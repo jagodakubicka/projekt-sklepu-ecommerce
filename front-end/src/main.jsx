@@ -1,13 +1,15 @@
+
 import "./styles/theme.css";
 import "./styles/globals.css";
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-//import { MainPage } from "./views/MainPage/MainPage.jsx"
+import { MainPage } from "./views/MainPage/MainPage.jsx"
 import { Favourites } from "./views/Favourites/Favourites.jsx";
 import { Cart } from "./views/Cart/Cart.jsx";
 import { Layout } from "./components/Layout/Layout.jsx";
+import { mainPageLoader } from "./api/mainPageLoader.js";
 //import { ProductsList } from "./views/ProductsList/ProductsList.jsx";
 //import { ProductDetails } from "./views/ProductDetails/ProductDetails.jsx";
 
@@ -21,6 +23,13 @@ const router = createBrowserRouter([
       },
       { path: '/ulubione',
         element: <Favourites/>
+      },
+      {
+        path:'/:gender?',
+        element:<MainPage/>,
+        loader:mainPageLoader,
+         
+        
       }
     ]
   },
