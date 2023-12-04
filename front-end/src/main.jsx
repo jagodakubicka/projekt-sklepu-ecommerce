@@ -29,14 +29,12 @@ const router = createBrowserRouter([
         path:'/:gender?',
         element:<MainPage/>,
         loader:mainPageLoader,
-         
-        
       },
       {
         path:'/:gender/:category/:subcategory?',
         element:<ProductsList/>,
         loader: productListLoader,
-      }
+      },
     ]
   },
   
