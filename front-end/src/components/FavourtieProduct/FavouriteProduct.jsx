@@ -1,14 +1,18 @@
+import { useContext } from "react";
 import styles from './FavouriteProduct.module.css';
 import REMOVE_ICON from '../../assets/remove.svg';
 import BAG_ICON from '../../assets/bag.svg';
 import { useFetcher } from 'react-router-dom';
 import { Price } from '../Price/Price';
+import { CartContext } from "../../contexts/CartContext";
+
 
 export function FavouriteProduct({favourite}){
   const product = favourite.product
   const {Form} = useFetcher()
 
   const price =  <p><Price product={product}/></p>
+  const [, addProductToCart] = useContext(CartContext)
  return(
   <div className={styles.favouriteProduct}>
    <img src={product.photos[0]} alt={product.productName} />
@@ -34,7 +38,7 @@ export function FavouriteProduct({favourite}){
         </button>
       </Form>
      
-     <button>
+     <button onClick={()=> {addProductToCart(product)}}>
       <img src={BAG_ICON} alt="" />
       Dodaj do koszyka</button>
     </div>
